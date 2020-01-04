@@ -28,7 +28,6 @@ const PURCHASE_DISPLAY_INTERVAL = 600000;
 const WATCH_TIMER_INTERVAL = 20000;
 const DBG_MARCH_INTERVAL = 45000;
 
-
 // implement the autoloadback referenced in loki constructor
 function databaseInitialize() {
   if (!db.getCollection("players")) {
@@ -86,6 +85,7 @@ async function watchTimer() {
     /* under 30 seconds & not on list, bid */
     if(+myPosition.toNumber() > 100 && offset < 30) {
       console.log('we gonna bid here son')
+      /* 0x414e4452... = refferal address */
       const sendTicketBuy = await contract.buyTickets('0x414e4452455759414e4700000000000000000000000000000000000000000000').send({
         callValue: 25000000,
         from: Config.myAddress
@@ -93,8 +93,6 @@ async function watchTimer() {
        const exitmsg = `kill signal - board list buy - ${sendTicketBuy}`
        setTimeout(exitBot, 1000, exitmsg);
     }
-
-
 
     if(currentTimer > lastTimer) {
     //  console.log(secondsSinceEpoch + ' TIMER_INCREASED ' + currentTimer)
@@ -111,8 +109,6 @@ async function watchTimer() {
         /* currentTimer below glitch threshhold */
       }
     }
-
-
   }
   catch(e) {
   //  console.log(e)
@@ -121,11 +117,9 @@ async function watchTimer() {
 }
 setInterval(watchTimer, WATCH_TIMER_INTERVAL);
 
-
 let glitchCount;
 
 async function initTimer() {
-
   try {
     const contract = await tronWeb.contract().at(curvyAddress)
     const trx = await contract.currentRoundData().call();
@@ -178,7 +172,7 @@ initTimer()
   */
 
  async function searchPlayerCollectionForProfitableTargets() {
-   const breakeven = .01
+   const breakeven = .03
    let total = 0.0;
    let result = players.find({ minedValueUSD: { $gt: breakeven }, automaticallyUpgrade: {$eq: true}  })
    if(result.length > 0) {
@@ -255,7 +249,6 @@ async function updatePlayerData(item) {
   const valueIfMined= value * .01;
   const minedValueUSD = valueIfMined * .013;
   const accountValueUSD = value * .013;
-
 
   item['automaticallyUpgrade'] = `${playersData.automaticallyUpgrade}`
   item['estimatedTotal'] = `${estimatedTotal}`
@@ -340,10 +333,8 @@ async function actOnGlitch() {
     result.forEach(item => {
         upgradeTickets(address,'GLITCH')
     });
-
      setTimeout(exitBot, 60000, 'kill signal - glitch');
   }
-
 }
 
 
@@ -367,8 +358,6 @@ async function actOnPlayerUpgrade(address,toggleResult,player) {
     }
   }
 }
-
-
 
 async function actOnPlayerPurchase(address,player) {
   if(player === null) {
@@ -469,14 +458,11 @@ async function addToPlayerCollection(address) {
   players.insert(JSON.parse(playerData))
 }
 
-/* ### Event Monitor */
-
 function timestamp() {
   const now = new Date();
   const secondsSinceEpoch = Math.round(now.getTime() / 1000);
   return secondsSinceEpoch
 }
-
 
 /* monitorCurvy()
  * installs trx event monitors for Just.Game contract
@@ -489,7 +475,6 @@ async function monitorCurvy() {
   console.log('#########################################################')
 
   const contract = await tronWeb.contract().at(curvyAddress)
-
   let watchToggle = await contract.autoUpgradeToggled().watch({filters: {}}, (err, res) => {
     /* ignore error spam */
     //if(err) {console.log(err)}
@@ -511,7 +496,6 @@ async function monitorCurvy() {
       let result = players.findOne({ "_id": searchAddress });
       actOnPlayerPurchase(searchAddress,result)
     }
-
   })
 
   let watchSquad = await contract.gainedSquadMember().watch({filters: {}}, (err, res) => {
@@ -532,7 +516,6 @@ async function monitorCurvy() {
       let result = players.findOne({ "_id": searchAddress });
       actOnTicketRedeemEvent(searchAddress, result)
     }
-
   })
 
   let rewardsWithdrawn = await contract.rewardsWithdrawn().watch({filters: {}}, (err, res) => {
@@ -543,9 +526,7 @@ async function monitorCurvy() {
       let result = players.findOne({ "_id": searchAddress });
       actOnRewardsWithdrawnEvent(searchAddress, result)
     }
-
   })
-
 }
 
 setTimeout(monitorCurvy, 10000)
