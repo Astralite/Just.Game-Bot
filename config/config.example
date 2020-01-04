@@ -1,0 +1,10 @@
+{
+  "myAddress" : "",
+  "privateKey" : "",
+  "fullNodeProvider" : "https://api.trongrid.io",
+  "solidityNode" : "https://api.trongrid.io",
+  "eventServer" : "https://api.trongrid.io",
+  "curvyAddress" : "TWjkoz18Y48SgWoxEeGG11ezCCzee8wo1A",
+  "DBG":9999,
+  "shouldUpgradeTickets": false
+}

@@ -1,0 +1,38 @@
+{
+  "name": "justgamebot",
+  "version": "0.1.0",
+  "description": "Just.Game Miner Bot(Curvy)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node --ignore config/* index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "nodemonConfig": {
+    "events": {
+      "start": "echo ###### STARTING",
+      "crash": "echo hard crash",
+      "restart": "echo restart"
+    },
+    "ignore": [
+      "config/*",
+      "docs/*"
+    ]
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "babel-cli": "^6.26.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "line-reader": "^0.4.0",
+    "lokijs": "^1.5.8",
+    "save": "^2.4.0",
+    "tingodb": "^0.6.1",
+    "tronweb": "^2.8.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "nodemon": "^1.11.0"
+  }
+}
