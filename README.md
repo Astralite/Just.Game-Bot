@@ -19,7 +19,7 @@ it TRX to work for you. Don't trust anyone's random software with private keys.
 If you want to receive email alerts for Just.Game timer status I created a service for that purpose.
 
 ## [CurvyAlerts](https://curvyalerts.com)
-A site which sends emails accounts based off Just.Game Timer Status. Make a throw away gmail account for the service. Then have gmail forward text emails containing CurvyAlerts to your mobile providers text to SMS gateway. [SMS gateway instructions](https://www.cnet.com/how-to/auto-forward-important-email-to-your-phone-as-a-text-message){:target="_blank"}
+A site which sends emails accounts based off Just.Game Timer Status. Make a throw away gmail account for the service. Then have gmail forward text emails containing CurvyAlerts to your mobile providers text to SMS gateway. [SMS gateway instructions](https://www.cnet.com/how-to/auto-forward-important-email-to-your-phone-as-a-text-message)
 
 ## Support [Just.Game](https://curvy.ai/andrewyang) Bot Development
 
