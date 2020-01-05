@@ -25,10 +25,8 @@
     "babel-cli": "^6.26.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "line-reader": "^0.4.0",
     "lokijs": "^1.5.8",
     "save": "^2.4.0",
-    "tingodb": "^0.6.1",
     "tronweb": "^2.8.1"
   },
   "devDependencies": {
