@@ -57,8 +57,8 @@ Executing Upgrade on tickets grants the calling wallet 1% of the mined value. If
 #### Instructions
 
 ````bash
-git clone git clone https://github.com/tkntobfrk/JustGameMiner.git
-cd JustGameMiner
+git clone git clone https://github.com/tkntobfrk/Just.Game-Bot.git
+cd Just.Game-Bot
 cp config/config.example config/config.json
 input account + privatekey in config/config.json
 optional (set "shouldUpgradeTickets": true) to force bot to bid
