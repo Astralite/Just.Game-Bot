@@ -71,3 +71,6 @@ The value estimates and USD conversion aand no promises to the accuracy of data.
 #### Glitch Assumption
 
 I made the assumption that bombcounter increments during the round and corrolates to Glitch firing. I'm not 100% certain that is correct.
+
+#### Medium Article
+* [Bot Intro Article](https://medium.com/@brucedotio/just-game-bot-af69bebaf724)
