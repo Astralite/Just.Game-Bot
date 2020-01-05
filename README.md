@@ -56,14 +56,15 @@ Executing Upgrade on tickets grants the calling wallet 1% of the mined value. If
 
 #### Instructions
 
-* git clone git clone https://github.com/tkntobfrk/JustGameMiner.git
-* cd JustGameMiner
-* cp config/config.example config/config.json
-* input account + privatekey in config/config.json
-* optional (set "shouldUpgradeTickets": true) to force bot to bid
-* npm i
-* npm start
-
+````bash
+git clone git clone https://github.com/tkntobfrk/JustGameMiner.git
+cd JustGameMiner
+cp config/config.example config/config.json
+input account + privatekey in config/config.json
+optional (set "shouldUpgradeTickets": true) to force bot to bid
+npm i
+npm start
+````
 
 #### Value Estimation/Methods
 The value estimates and USD conversion aand no promises to the accuracy of data. Should be more targeted and native to TRX to find if accounts are breakeven.
