@@ -1,7 +1,5 @@
 # Just.Game Bot
-This is a localhost node bot "miner" for Just.Game. By default it
-doesn't upgradeTickets. Mostly it monitors game state and each defined action
-can be used as an action point for gameplay logic.
+This is a localhost node bot "miner" for Just.Game. By default it doesn't upgradeTickets. Mostly it monitors game state and each defined action can be used as an action point for gameplay logic.
 
 ````
 1578171099 WITNESSED_TRX_PURCHASE_VALUE 141205872511
@@ -21,14 +19,11 @@ it TRX to work for you. Don't trust anyone's random software with private keys.
 If you want to receive email alerts for Just.Game timer status I created a service for that purpose.
 
 ## [CurvyAlerts](https://curvyalerts.com)
-A site which sends emails accounts based off Just.Game Timer Status. Make a throw away gmail account for the service. Then have gmail forward text emails
-containing CurvyAlerts to your mobile providers text to SMS gateway.
+A site which sends emails accounts based off Just.Game Timer Status. Make a throw away gmail account for the service. Then have gmail forward text emails containing CurvyAlerts to your mobile providers text to SMS gateway.
 
 ## Support [Just.Game](https://curvy.ai/andrewyang) Bot Development
 
-This bot does not intend to create winning strategies but its free just use my [ref link](https://curvy.ai/andrewyang). It only intends to give
-users predefined places for actionable code based on event status or local
-database queries. Do as you wish.
+This bot does not intend to create winning strategies. Its free! Feel free to use my [ref link](https://curvy.ai/andrewyang). Bot  intends to give users predefined places for actionable code based on event status or local database queries. Do as you wish.
 
 By default this bot will do a few simple items
 1) purchase if under 30 seconds and not on the timer list
@@ -56,7 +51,6 @@ Error: connect ETIMEDOUT 11.22.333.xxx:443
 #### Upgrading tickets
 Executing Upgrade on tickets grants the calling wallet 1% of the mined value. If the account upgrade is work 10,000 trx. You get 100 trx in value for calling the method.
 
-
 #### Prerequisites
 * node 8.x
 
@@ -72,9 +66,7 @@ Executing Upgrade on tickets grants the calling wallet 1% of the mined value. If
 
 
 #### Value Estimation/Methods
-The value estimates and USD conversion aand no promises to
-the accuracy of data. Should be more targeted and native to TRX itself to find
-if accounts are breakeven.
+The value estimates and USD conversion aand no promises to the accuracy of data. Should be more targeted and native to TRX to find if accounts are breakeven.
 
 #### Glitch Assumption
 
